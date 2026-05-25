@@ -155,3 +155,38 @@ body {
 .card h3 a:hover {
     text-decoration: underline;
 }
+/* --- Lógica do Segundo Submenu (Submenu dentro de Submenu) --- */
+
+/* Torna o item "Servidores" a referência para a posição do próximo menu */
+.submenu-item {
+    position: relative;
+}
+
+/* Esconde o submenu de segundo nível e o posiciona à direita do menu atual */
+.submenu-nested {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Empurra o menu totalmente para a direita */
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 4px 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    border-top: 3px solid #3b3183;
+}
+
+/* Garante que as opções internas tenham o mesmo visual */
+.submenu-nested li {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.submenu-nested li a {
+    display: block;
+    padding: 12px 16px;
+    font-weight: normal;
+}
+
+/* Mostra o segundo submenu apenas quando o mouse estiver em cima de "Servidores" */
+.submenu-item:hover .submenu-nested {
+    display: block;
+}
